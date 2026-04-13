@@ -5,11 +5,6 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import auth from '@react-native-firebase/auth';
 
-// TASK 1: Create signupSchema with these rules:
-// - name: required string
-// - email: valid email, required
-// - password: minimum 6 chars, required
-// - confirmPassword: must match password field, required
 const signupSchema = Yup.object().shape({
     name : Yup.string().required("Name is required"),
     email : Yup.string().email("Invalid Email").required("Email is required"),
@@ -18,29 +13,22 @@ const signupSchema = Yup.object().shape({
 });
 
 function SignupScreen({navigation}: any): React.JSX.Element {
-  // TASK 2: Create a loading state (true/false)
-  const [loading, setLoading] = useState(false);
 
+  const [loading, setLoading] = useState(false);
   const handleSignup = async (values: any) => {
-    // TASK 3: Set loading to true
     setLoading(true);
 
-    // TASK 4: Use auth().createUserWithEmailAndPassword() 
-    //         to register the user
     try{
         await auth().createUserWithEmailAndPassword(values.email, values.password);
-        navigation.replace('Home'); // TASK 5: On success, navigate to Home using replace
-    } catch (error: any) { // TASK 6: On error, show an Alert with the error message
+        navigation.replace('Home'); 
+    } catch (error: any) { 
         Alert.alert ('Signup Failed', error.message);
-    } finally { // TASK 7: Set loading to false in finally block
+    } finally { 
         setLoading(false);
     }
   };
 
   return (
-    // TASK 8: Build the UI similar to LoginScreen but with
-    // Name, Email, Password, Confirm Password fields
-    // and a Sign Up button
     <View style={styles.container}>
         <Text style={styles.title}>Social Connect</Text>
         <Text style={styles.subtitle}>Sign Up to Continue</Text>

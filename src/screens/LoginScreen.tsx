@@ -84,6 +84,10 @@ function LoginScreen({navigation}: any): React.JSX.Element {
               onPress={() => navigation.navigate('SignUp')}>
               <Text style={styles.link}>Don't have an account? Sign Up</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+              <Text style={styles.link}>Forgot Password?</Text>
+            </TouchableOpacity>
           </View>
         )}
       </Formik>
