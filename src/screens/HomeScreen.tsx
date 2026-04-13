@@ -16,9 +16,18 @@ function HomeScreen({navigation}: any): React.JSX.Element {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Welcome to SocialConnect!</Text>
-      <TouchableOpacity style={styles.button} onPress={handleLogout}>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Profile')}>
+        <Text style={styles.buttonText}>Edit Profile</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} 
+        onPress={handleLogout}>
         <Text style={styles.buttonText}>Logout</Text>
       </TouchableOpacity>
+
     </View>
   );
 }

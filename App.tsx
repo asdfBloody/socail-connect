@@ -6,6 +6,7 @@ import LoginScreen from './src/screens/LoginScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
 
 const Stack = createStackNavigator();
 
@@ -45,6 +46,11 @@ function App(): React.JSX.Element | null{
         <Stack.Screen
           name="ForgotPassword"
           component={ForgotPasswordScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
