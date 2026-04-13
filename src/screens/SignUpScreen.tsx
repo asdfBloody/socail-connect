@@ -4,6 +4,7 @@ import {View, Text, TextInput, TouchableOpacity,
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 const signupSchema = Yup.object().shape({
     name : Yup.string().required("Name is required"),
@@ -20,6 +21,13 @@ function SignupScreen({navigation}: any): React.JSX.Element {
 
     try{
         await auth().createUserWithEmailAndPassword(values.email, values.password);
+        const user = auth().currentUser;
+        await firestore().collection('users').doc(user?.uid).set({
+          name: values.name,
+          email: values.email,
+          bio:'',
+          createdAt: firestore.FieldValue.serverTimestamp() 
+        });
         navigation.replace('Home'); 
     } catch (error: any) { 
         Alert.alert ('Signup Failed', error.message);
