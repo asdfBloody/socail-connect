@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npx tsc *)",
+      "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -First 100)",
+      "PowerShell(node \".\\\\node_modules\\\\typescript\\\\bin\\\\tsc\" --noEmit 2>&1 | Select-Object -First 60)",
+      "PowerShell(node \".\\\\node_modules\\\\typescript\\\\bin\\\\tsc\" --noEmit; \"exit=$LASTEXITCODE\")",
+      "PowerShell(node \".\\\\node_modules\\\\jest\\\\bin\\\\jest.js\" --watchAll=false 2>&1 | Select-Object -Last 80; \"exit=$LASTEXITCODE\")",
+      "PowerShell(node \".\\\\node_modules\\\\jest\\\\bin\\\\jest.js\" --watchAll=false 2>&1 | Select-Object -Last 60; \"exit=$LASTEXITCODE\")",
+      "PowerShell(node \".\\\\node_modules\\\\jest\\\\bin\\\\jest.js\" --watchAll=false 2>&1 | Select-Object -Last 30; \"exit=$LASTEXITCODE\")",
+      "PowerShell(node \".\\\\node_modules\\\\jest\\\\bin\\\\jest.js\" --watchAll=false 2>&1 | Select-Object -Last 40; \"exit=$LASTEXITCODE\")",
+      "PowerShell(node \".\\\\node_modules\\\\jest\\\\bin\\\\jest.js\" --watchAll=false --forceExit 2>&1 | Select-Object -Last 15; \"exit=$LASTEXITCODE\")",
+      "PowerShell(node \".\\\\node_modules\\\\typescript\\\\bin\\\\tsc\" --noEmit; \"tsc=$LASTEXITCODE\"; node \".\\\\node_modules\\\\jest\\\\bin\\\\jest.js\" --watchAll=false --forceExit 2>&1 | Select-Object -Last 8; \"jest=$LASTEXITCODE\")",
+      "PowerShell(Get-Command *)",
+      "PowerShell(& \"$env:ANDROID_HOME\\\\platform-tools\\\\adb.exe\" devices)",
+      "PowerShell(node \".\\\\node_modules\\\\@react-native-community\\\\cli\\\\build\\\\bin.js\" start 2>&1)",
+      "PowerShell(node \".\\\\node_modules\\\\@react-native-community\\\\cli\\\\build\\\\bin.js\" run-android 2>&1)",
+      "PowerShell(node \".\\\\node_modules\\\\@react-native-community\\\\cli\\\\build\\\\bin.js\" run-android --no-packager 2>&1)",
+      "PowerShell(\\(New-Object -ComObject Scripting.FileSystemObject\\).GetFolder\\(\"D:\\\\Hamza\\\\DATAA\\\\QASIM&BILAL\\\\Bilal\\\\socail-connect-main\"\\).ShortPath)",
+      "PowerShell(New-Item *)",
+      "PowerShell(Move-Item *)",
+      "PowerShell(Set-Location D:\\\\; robocopy \"D:\\\\Hamza\\\\DATAA\\\\QASIM&BILAL\\\\Bilal\\\\socail-connect-main\" \"D:\\\\socail-connect-main\" /E /R:2 /W:1 /NFL /NDL /NJH /NJS /NP; \"exitcode=$LASTEXITCODE\")",
+      "PowerShell(Test-Path \"D:\\\\socail-connect-main\\\\package.json\"; Test-Path \"D:\\\\socail-connect-main\\\\node_modules\\\\react-native\"; Test-Path \"D:\\\\socail-connect-main\\\\android\\\\gradlew.bat\"; Test-Path \"D:\\\\socail-connect-main\\\\src\\\\screens\\\\ForgotPasswordScreen.tsx\"; \\(Get-ChildItem \"D:\\\\socail-connect-main\" | Measure-Object\\).Count; \"vs src:\"; \\(Get-ChildItem \"D:\\\\Hamza\\\\DATAA\\\\QASIM&BILAL\\\\Bilal\\\\socail-connect-main\" | Measure-Object\\).Count)",
+      "PowerShell(Get-ChildItem -Recurse \"D:\\\\socail-connect-main\\\\android\\\\build\" -ErrorAction SilentlyContinue | Where-Object { $_.Name -match \"autolink|generated\" } | Select-Object -First 20 FullName)",
+      "PowerShell(Test-Path \"D:\\\\socail-connect-main\\\\android\\\\build\"; \"---app---\"; Test-Path \"D:\\\\socail-connect-main\\\\android\\\\app\\\\build\"; Get-ChildItem \"D:\\\\socail-connect-main\\\\android\\\\app\\\\build\" -ErrorAction SilentlyContinue | Select-Object Name; \"---generated---\"; Get-ChildItem -Recurse \"D:\\\\socail-connect-main\\\\android\\\\app\\\\build\\\\generated\" -ErrorAction SilentlyContinue | Select-Object -First 30 FullName)",
+      "PowerShell(Get-ChildItem \"D:\\\\socail-connect-main\\\\android\\\\build\" | Select-Object Name; \"---\"; Test-Path \"D:\\\\socail-connect-main\\\\android\\\\build\\\\generated\\\\autolinking\"; Get-ChildItem -Recurse \"D:\\\\socail-connect-main\\\\android\\\\build\" -File | Where-Object { $_.Name -match \"autolink|settings\" } | Select-Object FullName)",
+      "Bash(git -C \"D:\\\\socail-connect-main\\\\socail-connect-main\" rev-parse --is-inside-work-tree)",
+      "Bash(gh auth *)",
+      "PowerShell(git ls-remote *)",
+      "PowerShell(git config *)",
+      "PowerShell(git *)",
+      "PowerShell(git add *)"
+    ]
+  }
+}
